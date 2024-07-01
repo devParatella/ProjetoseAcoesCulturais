@@ -1,7 +1,5 @@
-// controllers/projetoAcaoController.js
 const ProjetoAcao = require('../models/projetoAcaoModel');
 
-// Listar todos os projetos
 const listarProjetos = async (req, res) => {
   try {
     const projetos = await ProjetoAcao.findAll();
@@ -11,7 +9,6 @@ const listarProjetos = async (req, res) => {
   }
 };
 
-// Obter um projeto pelo ID
 const obterProjetoPorId = async (req, res) => {
   const { id } = req.params;
   try {
@@ -25,7 +22,6 @@ const obterProjetoPorId = async (req, res) => {
   }
 };
 
-// Criar um novo projeto
 const criarProjeto = async (req, res) => {
   try {
     const novoProjeto = await ProjetoAcao.create(req.body);
@@ -35,7 +31,6 @@ const criarProjeto = async (req, res) => {
   }
 };
 
-// Atualizar um projeto
 const atualizarProjeto = async (req, res) => {
   const { id } = req.params;
   try {
@@ -49,7 +44,6 @@ const atualizarProjeto = async (req, res) => {
   }
 };
 
-// Deletar um projeto
 const deletarProjeto = async (req, res) => {
   const { id } = req.params;
   try {

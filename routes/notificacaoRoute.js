@@ -5,7 +5,7 @@ const {
   criarNotificacao,
   atualizarNotificacao,
   deletarNotificacao
-} = require('../controllers/notificacaoController');
+} = require('../controller/notificacaoController');
 
 const notificacaoRoute = express.Router();
 

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-      "init-db": "node -e 'require(\"./config/database\").createDatabase().then(() => console.log(\"Banco de dados inicializado.\"))'"
+    "init-db": "node -e 'require(\"./config/database\").createDatabase().then(() => console.log(\"Banco de dados inicializado.\"))'"
   },
   "keywords": [],
   "author": "Alunos_RPV",

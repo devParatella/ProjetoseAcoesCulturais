@@ -1,7 +1,5 @@
-// controllers/notificacaoController.js
 const Notificacao = require('../models/notificacaoModel');
 
-// Listar todas as notificações
 const listarNotificacoes = async (req, res) => {
   try {
     const notificacoes = await Notificacao.findAll();
@@ -11,7 +9,6 @@ const listarNotificacoes = async (req, res) => {
   }
 };
 
-// Obter uma notificação pelo ID
 const obterNotificacaoPorId = async (req, res) => {
   const { id } = req.params;
   try {
@@ -25,7 +22,6 @@ const obterNotificacaoPorId = async (req, res) => {
   }
 };
 
-// Criar uma nova notificação
 const criarNotificacao = async (req, res) => {
   try {
     const novaNotificacao = await Notificacao.create(req.body);
@@ -35,7 +31,6 @@ const criarNotificacao = async (req, res) => {
   }
 };
 
-// Atualizar uma notificação
 const atualizarNotificacao = async (req, res) => {
   const { id } = req.params;
   try {
@@ -49,7 +44,6 @@ const atualizarNotificacao = async (req, res) => {
   }
 };
 
-// Deletar uma notificação
 const deletarNotificacao = async (req, res) => {
   const { id } = req.params;
   try {

@@ -5,7 +5,7 @@ const {
   criarAnexo,
   atualizarAnexo,
   deletarAnexo
-} = require('../controllers/anexoController');
+} = require('../controller/anexoController');
 
 const anexoRoute = express.Router();
 

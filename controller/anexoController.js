@@ -1,7 +1,6 @@
-// controllers/anexoController.js
 const Anexo = require('../models/anexoModel');
 
-// Listar todos os anexos
+
 const listarAnexos = async (req, res) => {
   try {
     const anexos = await Anexo.findAll();
@@ -11,7 +10,6 @@ const listarAnexos = async (req, res) => {
   }
 };
 
-// Obter um anexo pelo ID
 const obterAnexoPorId = async (req, res) => {
   const { id } = req.params;
   try {
@@ -25,7 +23,6 @@ const obterAnexoPorId = async (req, res) => {
   }
 };
 
-// Criar um novo anexo
 const criarAnexo = async (req, res) => {
   try {
     const novoAnexo = await Anexo.create(req.body);
@@ -35,7 +32,6 @@ const criarAnexo = async (req, res) => {
   }
 };
 
-// Atualizar um anexo
 const atualizarAnexo = async (req, res) => {
   const { id } = req.params;
   try {
@@ -49,7 +45,6 @@ const atualizarAnexo = async (req, res) => {
   }
 };
 
-// Deletar um anexo
 const deletarAnexo = async (req, res) => {
   const { id } = req.params;
   try {

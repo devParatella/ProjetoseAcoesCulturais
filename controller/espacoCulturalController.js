@@ -1,7 +1,5 @@
-// controllers/espacoCulturalController.js
 const EspacoCultural = require('../models/espacoCulturalModel');
 
-// Listar todos os espaços culturais
 const listarEspacosCulturais = async (req, res) => {
   try {
     const espacos = await EspacoCultural.findAll();
@@ -11,7 +9,6 @@ const listarEspacosCulturais = async (req, res) => {
   }
 };
 
-// Obter um espaço cultural pelo ID
 const obterEspacoCulturalPorId = async (req, res) => {
   const { id } = req.params;
   try {
@@ -25,7 +22,6 @@ const obterEspacoCulturalPorId = async (req, res) => {
   }
 };
 
-// Criar um novo espaço cultural
 const criarEspacoCultural = async (req, res) => {
   try {
     const novoEspaco = await EspacoCultural.create(req.body);
@@ -35,7 +31,6 @@ const criarEspacoCultural = async (req, res) => {
   }
 };
 
-// Atualizar um espaço cultural
 const atualizarEspacoCultural = async (req, res) => {
   const { id } = req.params;
   try {
@@ -49,7 +44,6 @@ const atualizarEspacoCultural = async (req, res) => {
   }
 };
 
-// Deletar um espaço cultural
 const deletarEspacoCultural = async (req, res) => {
   const { id } = req.params;
   try {

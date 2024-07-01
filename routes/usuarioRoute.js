@@ -5,7 +5,7 @@ const {
   criarUsuario,
   atualizarUsuario,
   deletarUsuario
-} = require('../controllers/usuarioController');
+} = require('../controller/usuarioController');
 
 const usuarioRoute = express.Router();
 

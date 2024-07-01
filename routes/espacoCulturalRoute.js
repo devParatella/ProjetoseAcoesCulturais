@@ -5,7 +5,7 @@ const {
   criarEspacoCultural,
   atualizarEspacoCultural,
   deletarEspacoCultural
-} = require('../controllers/espacoCulturalController');
+} = require('../controller/espacoCulturalController');
 
 const espacoCulturalRoute = express.Router();
 

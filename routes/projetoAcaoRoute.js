@@ -5,7 +5,7 @@ const {
   criarProjeto,
   atualizarProjeto,
   deletarProjeto
-} = require('../controllers/projetoAcaoController');
+} = require('../controller/projetoAcaoController');
 
 const projetoAcaoRoute = express.Router();
 
