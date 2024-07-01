@@ -1,9 +1,18 @@
 const express = require('express');
-const { getNotificacoes, createNotificacao } = require('../controller/notificacaoController');
+const {
+  listarNotificacoes,
+  obterNotificacaoPorId,
+  criarNotificacao,
+  atualizarNotificacao,
+  deletarNotificacao
+} = require('../controllers/notificacaoController');
 
 const notificacaoRoute = express.Router();
 
-notificacaoRoute.get('/', getNotificacoes);
-notificacaoRoute.post('/', createNotificacao);
+notificacaoRoute.get('/', listarNotificacoes);
+notificacaoRoute.get('/:id', obterNotificacaoPorId);
+notificacaoRoute.post('/', criarNotificacao);
+notificacaoRoute.put('/:id', atualizarNotificacao);
+notificacaoRoute.delete('/:id', deletarNotificacao);
 
 module.exports = notificacaoRoute;

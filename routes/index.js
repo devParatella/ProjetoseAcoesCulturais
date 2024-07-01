@@ -14,4 +14,3 @@ router.use('/espacosCulturais', espacoCulturalRoutes);
 router.use('/notificacoes', notificacaoRoutes);
 
 module.exports = router;
-

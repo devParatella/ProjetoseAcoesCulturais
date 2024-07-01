@@ -1,11 +1,18 @@
 const express = require('express');
-const ProjetoAcaoModel = require('../models/projetoAcaoModel');
-const { getProjetosAcoes, createProjetoAcao } = require('../controller/projetoAcaoController');
+const {
+  listarProjetos,
+  obterProjetoPorId,
+  criarProjeto,
+  atualizarProjeto,
+  deletarProjeto
+} = require('../controllers/projetoAcaoController');
+
 const projetoAcaoRoute = express.Router();
 
-
-
-projetoAcaoRoute.get('/', getProjetosAcoes);
-projetoAcaoRoute.post('/', createProjetoAcao);
+projetoAcaoRoute.get('/', listarProjetos);
+projetoAcaoRoute.get('/:id', obterProjetoPorId);
+projetoAcaoRoute.post('/', criarProjeto);
+projetoAcaoRoute.put('/:id', atualizarProjeto);
+projetoAcaoRoute.delete('/:id', deletarProjeto);
 
 module.exports = projetoAcaoRoute;

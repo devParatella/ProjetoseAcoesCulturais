@@ -1,9 +1,18 @@
 const express = require('express');
-const { getAnexos, createAnexo } = require('../controller/anexoController');
+const {
+  listarAnexos,
+  obterAnexoPorId,
+  criarAnexo,
+  atualizarAnexo,
+  deletarAnexo
+} = require('../controllers/anexoController');
 
 const anexoRoute = express.Router();
 
-anexoRoute.get('/', getAnexos);
-anexoRoute.post('/', createAnexo);
+anexoRoute.get('/', listarAnexos);
+anexoRoute.get('/:id', obterAnexoPorId);
+anexoRoute.post('/', criarAnexo);
+anexoRoute.put('/:id', atualizarAnexo);
+anexoRoute.delete('/:id', deletarAnexo);
 
 module.exports = anexoRoute;
