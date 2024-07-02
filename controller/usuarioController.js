@@ -37,7 +37,7 @@ const criarUsuario = async (req, res) => {
     const usuarioExistente = await Usuario.findOne({
       where: {
         email: {
-          [Op.iLike]: req.body.email,
+          [Op.like]: req.body.email.toLowerCase(),
         },
       },
     });
@@ -61,6 +61,7 @@ const criarUsuario = async (req, res) => {
     res.status(500).json({ message: "Erro ao criar usuário", error });
   }
 };
+
 
 const atualizarUsuario = async (req, res) => {
   const { id } = req.params;

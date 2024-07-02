@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
-const {sequelize} = require('../config/database');
-const {bcrypt} = require('bcrypt');
+const { sequelize } = require('../config/database');
+const bcrypt = require('bcrypt');
 
 const UsuarioModel = sequelize.define(
   "Usuario",
@@ -18,6 +18,9 @@ const UsuarioModel = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      set(value) {
+        this.setDataValue('email', value.toLowerCase());
+      }
     },
     senha: {
       type: DataTypes.STRING,
