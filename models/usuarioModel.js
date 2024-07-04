@@ -1,6 +1,6 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/database');
-const bcrypt = require('bcrypt');
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../config/database");
+const bcrypt = require("bcrypt");
 
 const UsuarioModel = sequelize.define(
   "Usuario",
@@ -13,49 +13,64 @@ const UsuarioModel = sequelize.define(
     nome_completo: {
       type: DataTypes.STRING,
       allowNull: false,
+      validade: {
+        len: [5, 50],
+      },
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       set(value) {
-        this.setDataValue('email', value.toLowerCase());
-      }
+        this.setDataValue("email", value.toLowerCase());
+      },
+      validate: {
+        isEmail: true,
+      },
     },
     senha: {
+      //complexidade de senha 6 caracteres
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [6],
+        isComplex(value) {},
+      },
     },
     telefone: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     genero: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     raca_etnia: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     cidade: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     estado: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     comprovante_residencia: {
+      //aplicar o multer
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    documento_identificacao: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+
     documento_rne: {
       type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    documento_identificacao: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {

@@ -11,22 +11,51 @@ const ProjetoAcao = sequelize.define('Projeto', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+
+  //termo de aceite
+  termo_aceite: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  },
+
   nome_projetoacao: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  descricao: {
+
+
+  descricao_proposta: {// unico
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  pdf_descricao: {
+
+
+
+  fotos_imagens: {//5 arquivos
+    type: DataTypes.STRING,
+    allowNull: false,
+    get(){
+      const path = this.getDataValue('fotos_imagens');
+
+    }
+  },
+
+
+
+
+  duvidas: {//
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+
+  linguagem_artistica: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  cronograma: {
-    type: DataTypes.TEXT,
-    allowNull: false,
-  },
+
+
+  // pendente para o adm e em análise para o proponente
+  // aprovado ou recusado// reenviar para proponente
   status: {
     type: DataTypes.ENUM('pendente', 'aprovado', 'rejeitado'),
     defaultValue: 'pendente',

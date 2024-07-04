@@ -46,11 +46,6 @@ const criarUsuario = async (req, res) => {
       return res.status(400).json({ message: "Email já cadastrado" });
     }
 
-    if (req.body.senha) {
-      const salt = await bcrypt.genSalt(10);
-      req.body.senha = await bcrypt.hash(req.body.senha, salt);
-    }
-
     const novoUsuario = await Usuario.create(req.body);
     res.status(201).json(novoUsuario);
   } catch (error) {
@@ -61,7 +56,6 @@ const criarUsuario = async (req, res) => {
     res.status(500).json({ message: "Erro ao criar usuário", error });
   }
 };
-
 
 const atualizarUsuario = async (req, res) => {
   const { id } = req.params;

@@ -11,7 +11,7 @@ const EspacoCultural = sequelize.define('EspacoCultural', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  endereco: {
+  endereco: {//remover?
     type: DataTypes.STRING,
     allowNull: false,
   },

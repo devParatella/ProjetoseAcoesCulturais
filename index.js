@@ -1,8 +1,8 @@
-// index.js
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const path = require("path");
 const { sequelize, createDatabase } = require("./config/database");
 const routes = require("./routes");
 
@@ -15,6 +15,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+
+// Servir arquivos estáticos
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 // Rotas
 app.use("/api", routes);
